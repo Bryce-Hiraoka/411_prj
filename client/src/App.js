@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
+import logo from './Asset.svg';
 import './App.css';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img className="App-logo" src={logo} alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
+        <h1 className="App-title">Welcome to JSA</h1>
         <p style={{ color: "white" }}>{data}</p>
       </header>
     </div>
