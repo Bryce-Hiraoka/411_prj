@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.send('<a href="/auth/google">Authenticate </a>');
 });
 
-app.get('/google/callback',
+app.get('/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/protected',
     failureRedirect: '/auth/failure',
