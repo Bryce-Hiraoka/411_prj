@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const callBackendAPI = async () => {
       try {
-        const response = await fetch("/api");
+        const response = await fetch("/protected");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }

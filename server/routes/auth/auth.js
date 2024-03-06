@@ -17,10 +17,11 @@ function isLoggedIn(req, res, next) {
   ); 
   
   router.get('/protected', isLoggedIn, (req, res) => {
-    res.setHeader('Content-Type', 'text/html');
-    res.write(`Hello ${req.user.displayName}`);
-    res.write('<a href="/logout"> Logout </a>');
-    res.end();
+    res.status(200).json({ message: 'You are authorized' });
+    // res.setHeader('Content-Type', 'text/html');
+    // res.write(`Hello ${req.user.displayName}`);
+    // res.write('<a href="/logout"> Logout </a>');
+    // res.end();
   });
   
   router.get('/logout', (req, res) => {
