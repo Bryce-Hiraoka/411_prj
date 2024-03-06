@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const callBackendAPI = async () => {
       try {
-        const response = await fetch("/api");
+        const response = await fetch("/protected");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -25,6 +25,7 @@ function App() {
         <img className="App-logo" src={logo} alt="logo" />
         <h1 className="App-title">Welcome to JSA</h1>
         <p style={{ color: "white" }}>{data}</p>
+        <a href="http://localhost:5000/auth/google">Authenticate </a>
       </header>
     </div>
   );
