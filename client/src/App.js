@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-import logo from './Asset.svg';
 import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import NavbarComponent from './components/NavbarComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState(null);
@@ -20,14 +25,15 @@ function App() {
     callBackendAPI();
   }, []);
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img className="App-logo" src={logo} alt="logo" />
-        <h1 className="App-title">Welcome to JSA</h1>
-        <p style={{ color: "white" }}>{data}</p>
-        <a href="http://localhost:5000/auth/google">Authenticate </a>
-      </header>
+      <NavbarComponent/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
+    
   );
 }
 export default App;
