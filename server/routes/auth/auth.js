@@ -1,23 +1,14 @@
 const router = require('express').Router();
-const session = require('express-session');
 const passport = require('passport');
 
 const cors = require('cors');
-
-require('dotenv').config();
 
 router.use(cors({
   origin: 'http://localhost:3000', 
   credentials: true
 }));
-router.use(session({
-  secret: process.env.EXPRESS_SESSION,
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: true }
-}));
+
 router.use(passport.initialize());
-router.use(passport.session());
 
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
@@ -37,7 +28,7 @@ function isLoggedIn(req, res, next) {
     }
   ); 
   
-  router.get('/loggedin', isLoggedIn, (req, res) => {
+  router.get('/protected', isLoggedIn, (req, res) => {
     if (req.session) {
       res.status(200).json({ message: 'You are authorized' });
     } else {
