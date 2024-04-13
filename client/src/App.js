@@ -10,19 +10,19 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const callBackendAPI = async () => {
-      try {
-        const response = await fetch("/protected");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const body = await response.json();
-        setData(body.message);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-    callBackendAPI();
+    // const callBackendAPI = async () => {
+    //   try {
+    //     const response = await fetch("/loggedin");
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch data");
+    //     }
+    //     const body = await response.json();
+    //     setData(body.message);
+    //   } catch (error) {
+    //     console.error(error.message);
+    //   }
+    // };
+    // callBackendAPI();
   }, []);
   return (
 

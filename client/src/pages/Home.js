@@ -11,7 +11,6 @@ class Home extends Component {
                 <header className="App-header">
                     <img className="App-logo" src={logo} alt="logo" />
                     <h1 className="App-title">Welcome to JSA</h1>
-                    <a href="http://localhost:5000/auth/google">Authenticate </a>
                 </header>
             </div>
         );
