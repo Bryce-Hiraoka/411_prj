@@ -36,7 +36,7 @@ function isLoggedIn(req, res, next) {
   });
   
   router.get('/google', passport.authenticate('google', 
-    { scope: ['email', 'profile']
+    { scope: ['openid', 'email', 'profile', 'https://www.googleapis.com/auth/calendar']
   }));
 
   module.exports = router;

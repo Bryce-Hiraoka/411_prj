@@ -11,6 +11,7 @@ passport.use(new GoogleStrategy({
   function(request, accessToken, refreshToken, profile, done) {
     // for returning a user from the database
     //User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    console.log(profile)
     return done(null, profile);
     //});
   }
