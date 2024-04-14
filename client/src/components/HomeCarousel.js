@@ -1,29 +1,31 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Image1 from '../assets/fall2023firstgen.JPG';
+import FirstGen from '../assets/fall2023firstgen.jpg';
+import Kyoudai from '../assets/kyoudai.jpg';
+import Soran from '../assets/soran.jpg';
 
 function HomeCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
-      <img className="d-block w-100" src={Image1} />
+      <img className="d-block w-100" src={FirstGen} />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>First General Meeting</h3>
+          <p>Awesome</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <img className="d-block w-100" src={Image1} />
+      <img className="d-block w-100" src={Soran} />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Soran Bushi (Converge 2024)</h3>
+          <p>Mad Lit</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={Image1} />
+        <img className="d-block w-100" src={Kyoudai} />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Kyoudai Program</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            As lit as it gets
           </p>
         </Carousel.Caption>
       </Carousel.Item>

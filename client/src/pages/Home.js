@@ -16,9 +16,9 @@ class Home extends Component {
                     <HomeCarousel />
                     <Image src={logo} roundedCircle style={{
                     position: 'absolute', 
-                    width: '20%', 
+                    width: '17%', 
                     height: '30%',
-                    transform: 'translateY(-60%)',
+                    transform: 'translateY(-75%)',
                     boxShadow: '0 0 10px 10px rgba(0, 0, 0, 0.2)',
                         }} 
                     />
