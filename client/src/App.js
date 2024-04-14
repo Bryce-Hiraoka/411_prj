@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Events from './pages/Events';
 import NavbarComponent from './components/NavbarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,6 +33,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
     </div>
     
