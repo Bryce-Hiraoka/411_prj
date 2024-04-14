@@ -14,11 +14,17 @@ class Home extends Component {
                             alignItems: 'center',
                             }}>
                     <HomeCarousel />
+                    <h1 style={{position: 'absolute', 
+                                color: 'white', 
+                                fontSize: '2vw',
+                                transform: 'translateY(-180%)',
+                                textShadow: '0 10px 10px rgba(0, 0, 0, 0.5)',
+                                }}>BU Japanese Student Association</h1>
                     <Image src={logo} roundedCircle style={{
                     position: 'absolute', 
                     width: '17%', 
                     height: '30%',
-                    transform: 'translateY(-75%)',
+                    transform: 'translateY(-95%)',
                     boxShadow: '0 0 10px 10px rgba(0, 0, 0, 0.2)',
                         }} 
                     />
