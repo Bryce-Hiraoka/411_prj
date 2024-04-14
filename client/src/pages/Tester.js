@@ -1,29 +1,31 @@
-import React, { Component, useState } from 'react';
-import logo from '../assets/jsa.svg';
-import axios from 'axios'
+import React, { Component } from 'react';
 
 import HomeCarousel from '../components/HomeCarousel';
 
-class Home extends Component {
+import logo from '../assets/jsa.svg';
+
+class Tester extends Component {
+
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {value: ''};
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        }
+    }
 
-        handleChange(event) {
-            this.setState({value: event.target.value});
-          }
+    handleChange(e) {
+        this.setState({value: e.target.value});
+    }
 
-        handleSubmit(event) {
-        event.preventDefault();
-        axios.post('/api/create-event')
-        }
+    handleSubmit(e) {
+        e.preventDefault();
+    }
 
     render() {
         return (
             <div>
+
                 <HomeCarousel />
                 <header className="App-header">
                     <img className="App-logo" src={logo} alt="logo" />
@@ -38,9 +40,20 @@ class Home extends Component {
                     <input type="submit" value="Submit" />
                     </form>
                 </header>
+
+                <header className="App-header">
+
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Summary:
+                            <input type="text" value={this.state.value} onChange={this.handleChange}></input>
+                        </label>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </header>
             </div>
         );
-    };
-};
+    }
+}
 
-export default Home;
+export default Tester;

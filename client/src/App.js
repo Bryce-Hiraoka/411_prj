@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
+import Tester from './pages/Tester';
 import NavbarComponent from './components/NavbarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,6 +32,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/tester/:id" element={<Tester />} />
+        
       </Routes>
     </div>
     
