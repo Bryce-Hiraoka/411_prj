@@ -4,6 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 
+import JSA from '../assets/JSAtext.svg';
+import BUJSA from '../assets/BUJSAtext.svg';
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -12,7 +15,14 @@ function NavbarComponent() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
       <Container>
-        <Navbar.Brand href="/">BUJSA</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            src={BUJSA}
+            width="80"
+            height="30"
+            className="d-inline-block align-middle"
+            alt="Logo"
+          /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
