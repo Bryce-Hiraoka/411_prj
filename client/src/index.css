@@ -11,3 +11,85 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-text {
+  transition: transform 0.08s ease-in-out;
+}
+
+.nav-text:hover {
+  transform: scale(1.05);
+}
+
+.fade-in-text {
+  animation: fadeInScaleText 1s ease-in-out forwards;
+  -webkit-animation: fadeInScaleText 1s ease-in-out forwards;
+  -moz-animation: fadeInScaleText 1s ease-in-out forwards;
+  -o-animation: fadeInScaleText 1s ease-in-out forwards;
+  -ms-animation: fadeInScaleText 1s ease-in-out forwards;
+}
+
+@keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-moz-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-webkit-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-o-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-ms-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+.fade-in-logo {
+  animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -webkit-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -moz-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -o-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -ms-animation: fadeInScaleLogo 1s ease-in-out forwards;
+}
+
+@keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-moz-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-webkit-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-o-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-ms-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
