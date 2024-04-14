@@ -30,15 +30,11 @@ function NavbarComponent() {
             <Nav.Link href="/contact">CONTACT</Nav.Link>
             <Nav.Link href="/events">EVENTS</Nav.Link>
             <NavDropdown title="RESOURCES" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="https://www.bu.edu/wll/undergraduate/languages/japanese/">BU JAPANESE LANGUAGE DEPARTMENT</NavDropdown.Item>
+              <NavDropdown.Item href="https://forms.gle/r9HharKTYJV71hkD7">CAREERS IN JAPAN</NavDropdown.Item>
+              
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="https://bu.campuslabs.com/engage/organization/japanese-student-association">TERRIER CENTRAL (BU ENGAGE)</NavDropdown.Item>
             </NavDropdown>
             
           </Nav>
