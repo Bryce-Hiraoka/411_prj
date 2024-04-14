@@ -1,14 +1,26 @@
 const express = require("express");
 const cors = require("cors");
-const session = require("express-session");
 const passport = require("passport");
 const app = express();
 const port = process.env.PORT || 5000;
 const authRoute = require('./routes/auth/auth.js');
+require('dotenv').config();
+const mongoose = require("mongoose");
+const cookieSession =require('cookie-session');
 
-app.use(session({secret: 'cats', resave: false, saveUninitialized: true}));
+//connect to mongodb
+mongoose.connect(process.env.mongoURI)
+
+//cookie session initialization
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [process.env.cookiekey]
+}));
+
+//passport
 app.use(passport.initialize());
 app.use(passport.session());
+
 require('./passport')
 
 app.use(
