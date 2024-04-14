@@ -11,15 +11,18 @@ class Home extends Component {
                 <div style={{position: 'relative',                            
                             display: 'flex',
                             justifyContent: 'center',
-                            alignItems: 'center',}}>
+                            alignItems: 'center',
+                            }}>
                     <HomeCarousel />
-                    <Image src={logo} rounded style={{
-                            position: 'absolute', 
-                            width: '30%', 
-                            height: '30%',
-                            transform: 'translateY(-60%)'
+                    <Image src={logo} roundedCircle style={{
+                    position: 'absolute', 
+                    width: '20%', 
+                    height: '30%',
+                    transform: 'translateY(-60%)',
+                    boxShadow: '0 0 10px 10px rgba(0, 0, 0, 0.2)',
                         }} 
                     />
+                    
                     </div>
                 <header className="App-header">
                     <img className="App-logo" src={logo} alt="logo" />
