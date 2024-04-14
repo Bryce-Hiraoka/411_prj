@@ -7,21 +7,21 @@ function HomeCarousel() {
   return (
     <Carousel>
       <Carousel.Item className="position-relative">
-      <img className="d-block w-100" src={Soran} />
+      <img className="d-block w-100 img-fluid" src={Soran} />
         <Carousel.Caption>
           <p></p>
         </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item className="position-relative">
-      <img className="d-block w-100" src={FirstGen} />
+      <img className="d-block w-100 img-fluid" src={FirstGen} />
         <Carousel.Caption>
           <p></p>
         </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item className="position-relative">
-        <img className="d-block w-100" src={Kyoudai} />
+        <img className="d-block w-100 img-fluid" src={Kyoudai} />
         <Carousel.Caption>
           <p></p>
         </Carousel.Caption>

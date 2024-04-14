@@ -10,7 +10,7 @@ import axios from 'axios';
 function NavbarComponent() {
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
       <Container>
         <Navbar.Brand href="/">BUJSA</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
