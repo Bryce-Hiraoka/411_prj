@@ -6,27 +6,24 @@ import Soran from '../assets/soran.jpg';
 function HomeCarousel() {
   return (
     <Carousel>
-      <Carousel.Item>
-      <img className="d-block w-100" src={FirstGen} />
-        <Carousel.Caption>
-          <h3>First General Meeting</h3>
-          <p>Awesome</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="position-relative">
       <img className="d-block w-100" src={Soran} />
         <Carousel.Caption>
-          <h3>Soran Bushi (Converge 2024)</h3>
-          <p>Mad Lit</p>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+
+      <Carousel.Item className="position-relative">
+      <img className="d-block w-100" src={FirstGen} />
+        <Carousel.Caption>
+          <p></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item className="position-relative">
         <img className="d-block w-100" src={Kyoudai} />
         <Carousel.Caption>
-          <h3>Kyoudai Program</h3>
-          <p>
-            As lit as it gets
-          </p>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
