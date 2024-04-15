@@ -22,7 +22,7 @@ class About extends Component {
         const otherOfficers = officers.filter(officer => !['President', 'Vice President'].includes(officer.role));
 
         return (
-            <div style={{ paddingTop: '60px', fontFamily: 'Arial Rounded MT Bold'}}>
+            <div style={{ paddingTop: '58px', fontFamily: 'Arial Rounded MT Bold'}}>
                 
                 <div style={{ display: 'flex' }}>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
