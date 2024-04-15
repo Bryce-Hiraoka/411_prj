@@ -11,6 +11,7 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done) {
+    console.log(refreshToken)
     //search for if user exists
     User.findOne({
       googleid: profile.id
@@ -23,7 +24,7 @@ passport.use(new GoogleStrategy({
           lname: profile.family_name,
           googleid: profile.id,
           email: profile.email,
-          refreshToken: refreshToken
+          refresh: refreshToken,
         }).save().then((newUser) => {
           console.log('New User Ceated' + newUser);
           done(null, newUser)

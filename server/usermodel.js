@@ -6,7 +6,7 @@ const userSchema = new schema ({
     lname: String,
     googleid: String,
     email: String,
-    refeshToken: String
+    refresh: String,
 })
 
 const User = mongoose.model('user', userSchema);
