@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.App {
+  background: linear-gradient(to right,rgb(244, 119, 138), pink, rgb(244, 119, 138));
+  min-height: 200vh;
+}
+
 .logo {
   transition: transform 0.3s ease-in-out;
 }
