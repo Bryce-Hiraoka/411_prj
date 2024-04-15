@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import FirstGen from '../assets/fall2023firstgen.jpg';
+import FirstGen from '../assets/fall2023firstgen.JPG';
 import Kyoudai from '../assets/kyoudai.jpg';
 import Soran from '../assets/soran.jpg';
 
