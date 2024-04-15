@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const EventCard = ({ event }) => (
-  <Card style={{ width: '18rem', margin: '10px' }}>
+  <Card style={{ width: '70rem', margin: '10px' }}>
     <Card.Body>
       <Card.Title>{event.name.text}</Card.Title>
       <Card.Text>{event.description.text}</Card.Text>

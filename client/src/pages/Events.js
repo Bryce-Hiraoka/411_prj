@@ -35,11 +35,11 @@ const testEvents = [
   ];
 
 
-class Events extends Component {
+  class Events extends Component {
     render() {
-
         return (
-            <div style={{ paddingTop: '58px' }}>
+            <div style={{ paddingTop: '58px', fontFamily: 'Arial Rounded MT Bold', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h1 style={{ paddingTop: '100px', paddingBottom: '100px' }}>JSA EVENTS!</h1>
                 {testEvents.map((event, index) => (
                     <EventCard event={event} key={index} />
                 ))}
