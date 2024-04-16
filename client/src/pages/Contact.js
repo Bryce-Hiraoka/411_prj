@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Timeline from '../components/Timeline';
 
 class About extends Component {
     render() {
         return (
             <div>
-                About Page
+                <Timeline/>
             </div>
         );
     }
