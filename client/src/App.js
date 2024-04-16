@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Events from './pages/Events';
+import Tester from './pages/Tester';
 import NavbarComponent from './components/NavbarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -35,6 +36,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/tester/:id" element={<Tester />} />
+      
       </Routes>
     </div>
     

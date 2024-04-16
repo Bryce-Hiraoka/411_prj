@@ -23,8 +23,9 @@ function isLoggedIn(req, res, next) {
       failureRedirect: '/auth/google/failure',
     }), 
     function(req, res) {
+      console.log(typeof req.user._id);
       req.session.user = req.user;
-      res.redirect('http://localhost:3000');
+      res.redirect('http://localhost:3000/tester?id='+req.user._id);
     }
   ); 
   
@@ -35,6 +36,12 @@ function isLoggedIn(req, res, next) {
       res.status(401).json({ message: 'You are not authorized' });
     }
   });
+
+  router.get('/calendar', (req, res) => {
+    console.log(res + "res")
+    console.log(req + "req")
+    res.send("Hello World")
+  })
   
   router.get('/logout', (req, res) => {
     req.logout(function(err) {
@@ -48,7 +55,7 @@ function isLoggedIn(req, res, next) {
   });
   
   router.get('/google', passport.authenticate('google', 
-    { scope: ['email', 'profile']
+    { scope: ['email', 'profile', 'https://www.googleapis.com/auth/calendar'], accessType: 'offline'
   }));
 
 module.exports = router;

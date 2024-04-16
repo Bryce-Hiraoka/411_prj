@@ -1,6 +1,8 @@
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const passport = require('passport');
+const User = require('./usermodel');
 require('dotenv').config();
+
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -9,18 +11,39 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    // for returning a user from the database
-    //User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return done(null, profile);
-    //});
+    console.log(refreshToken)
+    //search for if user exists
+    User.findOne({
+      googleid: profile.id
+    }).then((currentUser) => {
+      //user does not exist
+      if(!currentUser) {
+        //add new user to database
+        new User({
+          fname: profile.given_name,
+          lname: profile.family_name,
+          googleid: profile.id,
+          email: profile.email,
+          refresh: refreshToken,
+        }).save().then((newUser) => {
+          console.log('New User Ceated' + newUser);
+          done(null, newUser)
+        });
+      } else {
+        console.log("user exists");
+        done(null, currentUser)
+      }
+    });
   }
 ));
 
 
 passport.serializeUser(function(user, done) {
-    done(null, user);
+    done(null, user.id);
 });
 
-passport.deserializeUser(function(user, done) {
-    done(null, user);
+passport.deserializeUser(function(id, done) {
+    User.findById(id).then((user) => {
+      done(null, user);
+    });
 });
