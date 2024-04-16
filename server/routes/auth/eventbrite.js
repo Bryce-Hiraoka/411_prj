@@ -15,7 +15,7 @@ key = process.env.JSA_Token
 
 
 router.get('/', async (req, res) => {
-    fetch(eventURL, {
+    fetch(eventBriteURL, {
         headers: {
             'Authorization': 'Bearer ' + key
         }
