@@ -1,3 +1,9 @@
+Bryce Hiraoka & Theo Chen Project
+
+Demo Video: https://drive.google.com/drive/u/1/folders/1FjllNiPOPObbT5Ckw0L7_q6DToHAPBOG
+
+Build and Run Instructions:
+
 In order to run open two terminals
 
 In one of the terminals run npm install
