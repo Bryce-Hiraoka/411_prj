@@ -25,7 +25,7 @@ function isLoggedIn(req, res, next) {
     function(req, res) {
       console.log(typeof req.user._id);
       req.session.user = req.user;
-      res.redirect('http://localhost:3000/tester?id='+req.user._id);
+      res.redirect('http://localhost:3000');
     }
   ); 
   

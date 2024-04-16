@@ -11,6 +11,22 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function NavbarComponent() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/auth/protected', { withCredentials: true })
+      .then(response => {
+        if (response.status === 200) {
+          setIsLoggedIn(true);
+        }
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 401) {
+          setIsLoggedIn(false);
+        }
+        console.log(isLoggedIn);
+      });
+  }, []);
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary" fixed="top" style={{ fontFamily: 'Arial Rounded MT Bold' }}>
@@ -39,8 +55,8 @@ function NavbarComponent() {
             
           </Nav>
           <Nav className="ml-auto">
-            {<Button variant="outline-success" href="http://localhost:5000/auth/google">Login</Button>}
-          
+            {!isLoggedIn && <Button variant="outline-success" href="http://localhost:5000/auth/google">Login</Button>}
+            {isLoggedIn && <Button variant="outline-danger" href="http://localhost:5000/auth/logout">Logout</Button>}
           </Nav>
         </Navbar.Collapse>
       </Container>

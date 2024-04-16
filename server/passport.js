@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
           email: profile.email,
           refresh: refreshToken,
         }).save().then((newUser) => {
-          console.log('New User Ceated' + newUser);
+          console.log('New User Created' + newUser);
           done(null, newUser)
         });
       } else {

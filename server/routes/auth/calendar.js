@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
             }
         });
     });
-    res.send('complete')
+    res.redirect('http://localhost:3000/events');
   });
 
 router.post('/create-event', async (req, res, next) => {
