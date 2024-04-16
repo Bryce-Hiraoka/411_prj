@@ -1,8 +1,8 @@
-##Bryce Hiraoka & Theo Chen Project
+# Bryce Hiraoka & Theo Chen Project (BUJSA Website)
 
-# Demo Video: https://drive.google.com/drive/u/1/folders/1FjllNiPOPObbT5Ckw0L7_q6DToHAPBOG
+## Demo Video: https://drive.google.com/drive/u/1/folders/1FjllNiPOPObbT5Ckw0L7_q6DToHAPBOG
 
-# Build and Run Instructions:
+## Build and Run Instructions:
 
 In order to run open two terminals
 
