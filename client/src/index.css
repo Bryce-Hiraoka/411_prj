@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  background: linear-gradient(to right,rgb(244, 119, 138), pink, rgb(244, 119, 138));
+  min-height: 200vh;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2 {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-2 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: white;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left-2 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-2 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-2::after {
+  left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline-2::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-2 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-2::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-2::after,
+  .right-2::after {
+    left: 18px;
+  }
+
+  .left-2::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-2 {
+    left: 0%;
+  }
+}
+
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-text {
+  transition: transform 0.08s ease-in-out;
+}
+
+.nav-text:hover {
+  transform: scale(1.05);
+}
+
+.fade-in-text {
+  animation: fadeInScaleText 1s ease-in-out forwards;
+  -webkit-animation: fadeInScaleText 1s ease-in-out forwards;
+  -moz-animation: fadeInScaleText 1s ease-in-out forwards;
+  -o-animation: fadeInScaleText 1s ease-in-out forwards;
+  -ms-animation: fadeInScaleText 1s ease-in-out forwards;
+}
+
+@keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-moz-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-webkit-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-o-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+@-ms-keyframes fadeInScaleText {
+  0% {opacity:0; transform: scale(1.5) translateY(-750%);}
+  100% {opacity:1; transform: scale(1) translateY(-950%);}
+}
+
+.fade-in-logo {
+  animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -webkit-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -moz-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -o-animation: fadeInScaleLogo 1s ease-in-out forwards;
+  -ms-animation: fadeInScaleLogo 1s ease-in-out forwards;
+}
+
+@keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-moz-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-webkit-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-o-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
+
+@-ms-keyframes fadeInScaleLogo {
+  0% {opacity:0; transform: scale(1.5) translateY(-50%);}
+  100% {opacity:1; transform: scale(1) translateY(-70%);}
+}
