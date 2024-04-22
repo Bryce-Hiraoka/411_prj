@@ -29,7 +29,7 @@ const EventCard = ({ event }) => {
         <Card.Text>{`Date: ${new Date(event.start.local).toLocaleString()}`}</Card.Text>
         <Card.Text>{`Location: ${event.venue.address.localized_address_display}`}</Card.Text>
         <Button variant="primary" href={event.vanity_url}>Go to Event</Button>
-        {isLoggedIn ? <Button style={{ marginLeft: '10px' }} variant="outline-primary" href="http://localhost:5000/calendar">Add to your google calendar</Button> : null}
+        {isLoggedIn ? <Button style={{ marginLeft: '10px' }} variant="outline-primary" href="http://localhost:5000/eventbrite">Add to your google calendar</Button> : null}
       </Card.Body>
     </Card>
   );

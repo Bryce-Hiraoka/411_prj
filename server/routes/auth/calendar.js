@@ -10,9 +10,10 @@ const oauth2Client = new google.auth.OAuth2(
 )
 
 router.get('/', async (req, res) => {
+    const eventData = req.app.locals.data;
+    console.log(eventData.name.text)
     id = '661dded9b27c5376ff27ae2a'
     User.findById(id).then( async (user) => {
-        console.log(user);
         refreshToken = user.refresh
         oauth2Client.setCredentials({refresh_token: refreshToken})
         const calendar = google.calendar('v3');
@@ -20,15 +21,15 @@ router.get('/', async (req, res) => {
             auth: oauth2Client,
             calendarId: 'primary',
             requestBody: {
-                summary: "this is a test summary",
-                description: "this is a test description",
-                location: "700 CommonWealth Ave",
+                summary: eventData.name.text,
+                description: eventData.description.text,
+                location: eventData.venue.address.localized_address_display,
                 colorId: 6,
                 start: {
-                    dateTime: new Date('April 15, 2024 03:24:00')
+                    dateTime: eventData.start.utc
                 },
                 end: {
-                    dateTime: new Date('April 15, 2024 06:24:00')
+                    dateTime: eventData.end.utc
                 },
             }
         });
@@ -39,7 +40,6 @@ router.get('/', async (req, res) => {
 router.post('/create-event', async (req, res, next) => {
     id = '661b35237c0bdcca45085168';
     User.findById(id).then((user) => {
-        console.log(user)
       });
 
 })

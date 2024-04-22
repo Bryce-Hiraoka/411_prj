@@ -23,7 +23,6 @@ function isLoggedIn(req, res, next) {
       failureRedirect: '/auth/google/failure',
     }), 
     function(req, res) {
-      console.log(typeof req.user._id);
       req.session.user = req.user;
       res.redirect('http://localhost:3000');
     }
@@ -36,12 +35,6 @@ function isLoggedIn(req, res, next) {
       res.status(401).json({ message: 'You are not authorized' });
     }
   });
-
-  router.get('/calendar', (req, res) => {
-    console.log(res + "res")
-    console.log(req + "req")
-    res.send("Hello World")
-  })
   
   router.get('/logout', (req, res) => {
     req.logout(function(err) {

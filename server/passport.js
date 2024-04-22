@@ -11,7 +11,6 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    console.log(refreshToken)
     //search for if user exists
     User.findOne({
       googleid: profile.id
@@ -26,11 +25,11 @@ passport.use(new GoogleStrategy({
           email: profile.email,
           refresh: refreshToken,
         }).save().then((newUser) => {
-          console.log('New User Created' + newUser);
+          //console.log('New User Created' + newUser);
           done(null, newUser)
         });
       } else {
-        console.log("user exists");
+        //console.log("user exists");
         done(null, currentUser)
       }
     });

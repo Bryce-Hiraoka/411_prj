@@ -27,11 +27,11 @@ router.get('/', async (req, res) => {
         return response.json()
     })
     .then(data => {
-        console.log(data);
-        res.send(data);
+        req.app.locals.data = data;
+        res.redirect('http://localhost:5000/calendar');
     })
     .catch(error => {
-        console.error(errror)
+        console.error(error)
     })
 });
 
