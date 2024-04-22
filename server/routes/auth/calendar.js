@@ -12,7 +12,7 @@ const oauth2Client = new google.auth.OAuth2(
 router.get('/', async (req, res) => {
     const eventData = req.app.locals.data;
     console.log(eventData.name.text)
-    id = '661dded9b27c5376ff27ae2a'
+    id = global.userID
     User.findById(id).then( async (user) => {
         refreshToken = user.refresh
         oauth2Client.setCredentials({refresh_token: refreshToken})

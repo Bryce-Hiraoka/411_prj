@@ -1,3 +1,4 @@
+const router = require('express').Router();
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const passport = require('passport');
 const User = require('./usermodel');
@@ -36,8 +37,8 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-
 passport.serializeUser(function(user, done) {
+    global.userID = user.id
     done(null, user.id);
 });
 
@@ -46,3 +47,5 @@ passport.deserializeUser(function(id, done) {
       done(null, user);
     });
 });
+
+module.exports = router;
