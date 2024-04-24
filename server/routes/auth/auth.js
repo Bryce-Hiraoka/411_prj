@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const passport = require('passport');
 
+const cors = require('cors');
+
+router.use(cors({
+  origin: 'http://localhost:3000', 
+  credentials: true
+}));
+
+router.use(passport.initialize());
+
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
   }
@@ -11,24 +20,27 @@ function isLoggedIn(req, res, next) {
   
   router.get('/google/callback',
     passport.authenticate('google', {
-      successRedirect: 'http://localhost:3000',
       failureRedirect: '/auth/google/failure',
-    })
+    }), 
+    function(req, res) {
+      req.session.user = req.user;
+      res.redirect('http://localhost:3000');
+    }
   ); 
   
   router.get('/protected', isLoggedIn, (req, res) => {
-    res.status(200).json({ message: 'You are authorized' });
-    // res.setHeader('Content-Type', 'text/html');
-    // res.write(`Hello ${req.user.displayName}`);
-    // res.write('<a href="/logout"> Logout </a>');
-    // res.end();
+    if (req.session) {
+      res.status(200).json({ message: 'You are authorized' });
+    } else {
+      res.status(401).json({ message: 'You are not authorized' });
+    }
   });
   
   router.get('/logout', (req, res) => {
     req.logout(function(err) {
       if(err) { return next (err); }
     });
-    res.send('Logged Out');
+    res.redirect('http://localhost:3000');
   })
   
   router.get('google/failure', (req, res) => {
@@ -36,7 +48,7 @@ function isLoggedIn(req, res, next) {
   });
   
   router.get('/google', passport.authenticate('google', 
-    { scope: ['email', 'profile']
+    { scope: ['email', 'profile', 'https://www.googleapis.com/auth/calendar'], accessType: 'offline'
   }));
 
-  module.exports = router;
+module.exports = router;

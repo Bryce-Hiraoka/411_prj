@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import Home from './pages/Home';
-import About from './pages/About';
+import About from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Events from './pages/Events';
+import Tester from './pages/Tester';
 import NavbarComponent from './components/NavbarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,19 +13,19 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const callBackendAPI = async () => {
-      try {
-        const response = await fetch("/protected");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const body = await response.json();
-        setData(body.message);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-    callBackendAPI();
+    // const callBackendAPI = async () => {
+    //   try {
+    //     const response = await fetch("/loggedin");
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch data");
+    //     }
+    //     const body = await response.json();
+    //     setData(body.message);
+    //   } catch (error) {
+    //     console.error(error.message);
+    //   }
+    // };
+    // callBackendAPI();
   }, []);
   return (
 
@@ -31,6 +34,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/tester/:id" element={<Tester />} />
+      
       </Routes>
     </div>
     
